@@ -5,13 +5,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-public class HelloClassloader extends ClassLoader {
+public class HelloClassLoader extends ClassLoader {
 
     public static void main(String[] args) {
         try {
             String filePath = "E:\\log\\Hello.xlass";
             String objectName = "Hello";
-            Class clazz = new HelloClassloader().findClass(objectName, filePath);
+            Class clazz = new HelloClassLoader().findClass(objectName, filePath);
             Method method = clazz.getMethod("hello");
             method.invoke(clazz.newInstance());
         } catch (Exception e) {
